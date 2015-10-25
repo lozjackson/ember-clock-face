@@ -1,5 +1,12 @@
+/**
+  @module ember-clock-face
+*/
 import Ember from 'ember';
 
+/**
+  @class HourMarkerComponent
+  @namespace EmberClockFace
+*/
 export default Ember.Component.extend({
 
   /**
