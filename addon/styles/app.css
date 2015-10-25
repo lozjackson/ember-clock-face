@@ -1,0 +1,32 @@
+svg.clock-face > circle.face {
+	stroke-width: 2px;
+  stroke: #405FD0;
+}
+
+svg.clock-face text {
+  font-size: 10px;
+  font-family: arial;
+  fill: #fff;
+  stroke: #fff;
+}
+
+svg.clock-face .hour-mark {
+  stroke-width: 2px;
+  stroke: #fff;
+}
+
+svg.clock-face .minute-mark  {
+  stroke-width: 1px;
+  stroke: #fff;
+}
+
+svg.clock-face .hour-hand,
+svg.clock-face .minute-hand {
+	stroke-width: 2px;
+  stroke: #fff;
+}
+
+svg.clock-face .second-hand {
+  stroke-width: 1px;
+  stroke: #f55;
+}

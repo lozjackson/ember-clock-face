@@ -1,3 +1,25 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">ember-clock-face</h2>
+
+<div>
+  {{format-time clock.hour '12-hour'}}:{{pad-zero clock.minute}}:{{pad-zero clock.second}} {{format-time clock.hour 'meridian'}}
+</div>
+
+<div>
+  {{clock-face size="150"}}
+  {{clock-face size="150" showClockNumbers=true showClockHours=false showClockMinutes=false}}
+  {{clock-face size="150" showClockNumbers=false showClockHours=true showClockMinutes=false}}
+  {{clock-face size="150" showClockNumbers=false showClockHours=true showClockMinutes=true}}
+  {{clock-face size="150" showClockNumbers=false showClockHours=false showClockMinutes=true}}
+</div>
+
+<div>
+  {{input type="checkbox" checked=showClockNumbers}} Show Clock Numbers<br>
+  {{input type="checkbox" checked=showClockHours}} Show Clock Hours<br>
+  {{input type="checkbox" checked=showClockMinutes}} Show Clock Minutes<br>
+  {{input type="range" value=clockSize min="1" max="1000" step="0.01"}} Size {{clockSize}}
+</div>
+
+
+{{clock-face size=clockSize showClockNumbers=showClockNumbers showClockHours=showClockHours showClockMinutes=showClockMinutes}}
 
 {{outlet}}
