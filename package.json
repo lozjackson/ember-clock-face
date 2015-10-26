@@ -1,7 +1,7 @@
 {
   "name": "ember-clock-face",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A clock face for Ember.",
   "directories": {
     "doc": "doc",
     "test": "tests"
