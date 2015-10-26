@@ -29,6 +29,13 @@ The clock can be styled using CSS.
 
 
 
+## Dependencies
+
+* [ember-clock](https://github.com/lozjackson/ember-clock)
+
+
+
+
 ## Installation
 
 * `git clone` this repository
