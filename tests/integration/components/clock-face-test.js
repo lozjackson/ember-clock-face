@@ -1,14 +1,19 @@
-// import { moduleForComponent, test } from 'ember-qunit';
-// import hbs from 'htmlbars-inline-precompile';
-//
-// moduleForComponent('clock-face', 'Integration | Component | clock face', {
-//   integration: true
-// });
+import { moduleForComponent, test } from 'ember-qunit';
+import hbs from 'htmlbars-inline-precompile';
+import ClockService from 'ember-clock/services/clock';
+
+moduleForComponent('clock-face', 'Integration | Component | clock face', {
+  integration: true,
+  setup: function(container) {
+    container.register('service:clock', ClockService);
+    container.injection('component', 'clock', 'service:clock');
+  }
+});
 
 // test('it renders', function(assert) {
-//   assert.expect(3);
-//
-//   // Set any properties with this.set('myProperty', 'value');
+//  assert.expect(3);
+  
+//  // Set any properties with this.set('myProperty', 'value');
 //   // Handle any actions with this.on('myAction', function(val) { ... });
 //
 //   this.render(hbs`{{clock-face size=clockSize}}`);
