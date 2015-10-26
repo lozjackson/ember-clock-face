@@ -93,49 +93,5 @@ export default Ember.Component.extend({
     @property height
     @type {Number}
   */
-  height: Ember.computed.alias('size'),
-
-  /**
-    Computed Property.
-
-    @property hour
-    @type {Number}
-  */
-  hour: Ember.computed( 'clock.hour', 'clock.minute', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
-    }
-    var hour = clock.get('hour');
-    var minute = clock.get('minute');
-    return 30 * ( hour % 12 ) + minute / 2;
-  }),
-
-  /**
-    Computed Property.
-
-    @property minute
-    @type {Number}
-  */
-  minute: Ember.computed( 'clock.minute', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
-    }
-    return 6 * clock.get('minute');
-  }),
-
-  /**
-    Computed Property.
-
-    @property second
-    @type {Number}
-  */
-  second: Ember.computed( 'clock.second', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
-    }
-    return 6 * clock.get('second');
-  })
+  height: Ember.computed.alias('size')
 });
