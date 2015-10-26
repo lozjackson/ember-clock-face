@@ -9,13 +9,13 @@ import layout from '../templates/components/clock-face';
   @namespace EmberClockFace
 */
 export default Ember.Component.extend({
-  
+
   /**
     @property layout
     @type {Object}
   */
   layout: layout,
-  
+
   /**
     @property tagName
     @type {String}
@@ -81,7 +81,7 @@ export default Ember.Component.extend({
 
   /**
     Alias of `size`.
-    
+
     @property width
     @type {Number}
   */
@@ -89,7 +89,7 @@ export default Ember.Component.extend({
 
   /**
     Alias of `size`.
-    
+
     @property height
     @type {Number}
   */
@@ -97,33 +97,45 @@ export default Ember.Component.extend({
 
   /**
     Computed Property.
-    
+
     @property hour
     @type {Number}
   */
   hour: Ember.computed( 'clock.hour', 'clock.minute', function() {
-    var hour = this.clock.get('hour');
-    var minute = this.clock.get('minute');
+    var clock = this.clock;
+    if ( !clock ) {
+      return 0;
+    }
+    var hour = clock.get('hour');
+    var minute = clock.get('minute');
     return 30 * ( hour % 12 ) + minute / 2;
   }),
 
   /**
     Computed Property.
-    
+
     @property minute
     @type {Number}
   */
   minute: Ember.computed( 'clock.minute', function() {
-    return 6 * this.clock.get('minute');
+    var clock = this.clock;
+    if ( !clock ) {
+      return 0;
+    }
+    return 6 * clock.get('minute');
   }),
 
   /**
     Computed Property.
-    
+
     @property second
     @type {Number}
   */
   second: Ember.computed( 'clock.second', function() {
-    return 6 * this.clock.get('second');
+    var clock = this.clock;
+    if ( !clock ) {
+      return 0;
+    }
+    return 6 * clock.get('second');
   })
 });
