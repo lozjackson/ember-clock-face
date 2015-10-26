@@ -31,7 +31,7 @@ export default Ember.Component.extend({
   classNames: [ 'clock-hand' ],
 
   /**
-    This is the value of the minute where the marker should be displayed.
+    This is the angle to rotate the clock hand by to point to the correct time.
 
     @property value
     @type {Number}
