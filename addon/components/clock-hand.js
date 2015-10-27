@@ -6,7 +6,8 @@ import Ember from 'ember';
 /**
   ## Clock Hand
 
-  
+  The clock-hand component is used to render a svg `line` element to represent a
+  clock hand.
 
   @class ClockHandComponent
   @namespace EmberClockFace

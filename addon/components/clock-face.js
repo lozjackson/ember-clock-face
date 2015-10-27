@@ -15,6 +15,7 @@ import layout from '../templates/components/clock-face';
   {{clock-face}}
   ```
 
+
   Clock face, 150px in size, with numbers.
 
   ```
