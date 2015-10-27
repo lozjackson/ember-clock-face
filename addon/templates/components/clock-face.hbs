@@ -2,7 +2,7 @@
 <g>
   {{#each clockNumbers as |number|}}
     {{#if showClockNumbers}}
-      <text x={{number.x}} y={{number.y}}>{{number.text}}</text>
+      <text x={{number.x}} y={{number.y}} class="clock-number">{{number.text}}</text>
     {{/if}}
     {{#if showClockHours}}
       {{hour-marker value=number.text}}
