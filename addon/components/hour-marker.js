@@ -2,28 +2,14 @@
   @module ember-clock-face
 */
 import Ember from 'ember';
+import SvgLineMixin from 'ember-clock-face/mixins/svg-line';
 
 /**
   @class HourMarkerComponent
+  @uses EmberClockFace.SvgLineMixin
   @namespace EmberClockFace
 */
-export default Ember.Component.extend({
-
-  /**
-    @property tagName
-    @type {String}
-    @default `line`
-    @private
-  */
-  tagName: 'line',
-
-  /**
-    @property attributeBindings
-    @type {Array}
-    @default `[ 'x1', 'x2', 'y1', 'y2', 'transform' ]`
-    @private
-  */
-  attributeBindings: [ 'x1', 'x2', 'y1', 'y2', 'transform' ],
+export default Ember.Component.extend( SvgLineMixin, {
 
   /**
     @property classNames
@@ -42,28 +28,12 @@ export default Ember.Component.extend({
   value: 0,
 
   /**
-    @property x1
-    @type {Number}
-    @default 50
-    @private
-  */
-  x1:50,
-
-  /**
     @property y1
     @type {Number}
     @default 12
     @private
   */
   y1:12,
-
-  /**
-    @property x2
-    @type {Number}
-    @default 50
-    @private
-  */
-  x2:50,
 
   /**
     @property y2
@@ -74,16 +44,18 @@ export default Ember.Component.extend({
   y2:5,
 
   /**
-    Computed Property.
+    This is the angle to rotate the marker to point to the correct time.
+    It is used by the `transform` computed property to set the rotate angle.  A
+    value of `90` will rotate the marker clockwise by 90 degrees and point to
+    15 minutes (3 0'clock), A value of `180` will rotate the marker by 180 degrees
+    and point to 30 minutes (6 o'clock).
 
-    @property transform
-    @type {String}
-    @default `rotate(0 50 50)`
+    @property rotate
+    @type {Number}
     @private
   */
-  transform: Ember.computed('value', function() {
+  rotate: Ember.computed( 'value', function() {
     var value = this.get('value') || 0;
-    return `rotate(${30 * value} 50 50)`;
+    return 30 * value;
   })
-
 });
