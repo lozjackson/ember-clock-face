@@ -39,6 +39,8 @@ test('hand rotates', function(assert) {
   var second = date.getSeconds();
   var rotateSecond = 6 * second;
 
+  this.clock.stopClock();
+
   assert.equal(this.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
 });
 
@@ -52,7 +54,11 @@ test('second hand ticks', function (assert) {
   var second = date.getSeconds();
   var rotateSecond = 6 * second;
 
+  //this.clock.stopClock();
+
   assert.equal(that.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
+
+  //this.clock.startClock();
 
   window.QUnit.stop();
 
@@ -61,6 +67,7 @@ test('second hand ticks', function (assert) {
     var second = date.getSeconds();
     var rotateSecond = 6 * second;
 
+    //this.clock.stopClock();
     assert.equal(that.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
 
     window.QUnit.start();
