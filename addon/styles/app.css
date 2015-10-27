@@ -7,7 +7,7 @@ svg.clock-face > circle.face {
   stroke: #405FD0;
 }
 
-svg.clock-face text {
+svg.clock-face text.clock-number {
   font-size: 10px;
   font-family: arial;
   fill: #fff;
