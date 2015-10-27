@@ -23,11 +23,11 @@ test('it renders', function(assert) {
 
   assert.equal(this.$('.clock-hand').css('transform'), 'none');
 
-  this.set( 'clockHandValue', 60 );
+  this.set( 'clockHandValue', 10 );
 
   assert.equal(this.$('.clock-hand').attr('transform'), 'rotate(60 50 50)');
 
-  this.set( 'clockHandValue', 180 );
+  this.set( 'clockHandValue', 30 );
 
   assert.equal(this.$('.clock-hand').attr('transform'), 'rotate(180 50 50)');
 });
