@@ -102,3 +102,27 @@ test('has correct viewbox attr', function(assert) {
 //   assert.equal(this.$('.clock-hand.minute-hand').attr('transform'), `rotate(${rotateMinute} 50 50)`, 'minute-hand should be rotated by ' + rotateMinute );
 //   assert.equal(this.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
 // });
+
+test('12 numbers are displayed', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs`{{clock-face showClockNumbers=true}}`);
+
+  assert.equal(this.$('.clock-face .clock-number').get('length'), 12);
+});
+
+test('12 hour markers are displayed', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs`{{clock-face showClockHours=true}}`);
+
+  assert.equal(this.$('.clock-face .hour-mark').get('length'), 12);
+});
+
+test('60 minute markers are displayed', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs`{{clock-face showClockMinutes=true}}`);
+
+  assert.equal(this.$('.clock-face .minute-mark').get('length'), 60);
+});
