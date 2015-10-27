@@ -2,9 +2,7 @@
 
 The is an Ember addon that provides a clock face.  
 
-It uses [ember-clock](https://github.com/lozjackson/ember-clock) as a dependency.  
-If you don't need a clock face, but you want to use a clock to update time sensitive
-properties, use [ember-clock](https://github.com/lozjackson/ember-clock) instead.
+It uses [ember-clock](https://github.com/lozjackson/ember-clock) as a dependency.  If you don't need a clock face, but you want to use a clock to update time sensitive properties, use [ember-clock](https://github.com/lozjackson/ember-clock) instead.
 
 
 
