@@ -28,6 +28,15 @@ export default ClockHandComponent.extend({
   y2:25,
 
   /**
+    An alias of 'value'.
+
+    @property rotate
+    @type {Number}
+    @private
+  */
+  rotate: Ember.computed.alias( 'value' ),
+
+  /**
     Computed Property.  The value is set using the clock service to synchronize time.
 
     This is the angle to rotate the clock hand by to point to the correct time.

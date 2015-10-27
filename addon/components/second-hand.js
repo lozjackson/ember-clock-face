@@ -28,19 +28,13 @@ export default ClockHandComponent.extend({
   y2:10,
 
   /**
-    Computed Property.  The value is set using the clock service to synchronize time.
+    An alias of `clock.second`.  The value is set using the clock service to synchronize time.
 
-    This is the angle to rotate the clock hand by to point to the correct time.
-    It is used by the `transform` computed property to set the rotate angle.
+    This the value of the clockhand in seconds.  A value of `15` will mean the
+    clock hand will be rotated to point to the 15 second mark (3 o'clock).
 
     @property value
     @type {Number}
   */
-  value: Ember.computed( 'clock.second', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
-    }
-    return 6 * clock.get('second');
-  })
+  value: Ember.computed.alias( 'clock.second' )
 });
