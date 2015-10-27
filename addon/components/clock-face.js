@@ -5,6 +5,23 @@ import Ember from 'ember';
 import layout from '../templates/components/clock-face';
 
 /**
+  # Clock Face
+
+  This component renders a clock face using an svg image element.
+
+  To create a basic clock face using the default parameters.
+
+  ```
+  {{clock-face}}
+  ```
+
+  Clock face, 150px in size, with numbers.
+
+  ```
+  {{clock-face size="150" showClockNumbers=true}}
+  ```
+
+
   @class ClockFaceComponent
   @namespace EmberClockFace
 */
@@ -13,6 +30,7 @@ export default Ember.Component.extend({
   /**
     @property layout
     @type {Object}
+    @private
   */
   layout: layout,
 
@@ -20,6 +38,7 @@ export default Ember.Component.extend({
     @property tagName
     @type {String}
     @default `svg`
+    @private
   */
   tagName: 'svg',
 
@@ -27,6 +46,7 @@ export default Ember.Component.extend({
     @property attributeBindings
     @type {Array}
     @default `[ 'width', 'height', 'viewBox' ]`
+    @private
   */
   attributeBindings: [ 'width', 'height', 'viewBox' ],
 
@@ -34,12 +54,28 @@ export default Ember.Component.extend({
     @property classNames
     @type {Array}
     @default `[ 'ember-clock-face', 'clock-face' ]`
+    @private
   */
   classNames: [ 'ember-clock-face', 'clock-face' ],
 
   /**
+    ## Size
+
+    This is the size of the clock.  The size is used to set the `height` and `width`
+    attributes of the svg element.  You can set a number, such as `50`, which
+    would produce a clock face 50x50 pixels, or provide a string such as `50px`,
+    `50cm`, `50mm`, etc
+
+    ```
+    // 50 px
+    {{clock-face size="50"}}
+
+    // 50 cm
+    {{clock-face size="50cm"}}
+    ```
+
     @property size
-    @type {Number}
+    @type {Number|String}
     @default `200`
   */
   size: 200,
@@ -48,10 +84,19 @@ export default Ember.Component.extend({
     @property viewBox
     @type {String}
     @default `0 0 100 100`
+    @private
   */
   viewBox: "0 0 100 100",
 
    /**
+    ## Show Clock Numbers
+
+    Display clock numbers on the clock face.
+
+    ```
+    {{clock-face showClockNumbers=true}}
+    ```
+
     @property showClockNumbers
     @type {Boolean}
     @default `false`
@@ -59,6 +104,14 @@ export default Ember.Component.extend({
   showClockNumbers: false,
 
   /**
+    ## Show hour markers
+
+    Display hour-markers on the clock face.
+
+    ```
+    {{clock-face showClockHours=true}}
+    ```
+
     @property showClockHours
     @type {Boolean}
     @default `false`
@@ -66,6 +119,14 @@ export default Ember.Component.extend({
   showClockHours: false,
 
   /**
+    ## Show minute markers
+
+    Display minute-markers on the clock face.
+
+    ```
+    {{clock-face showClockMinutes=true}}
+    ```
+
     @property showClockMinutes
     @type {Boolean}
     @default `false`
@@ -73,8 +134,16 @@ export default Ember.Component.extend({
   showClockMinutes: false,
 
   /**
+    This is the radius of the circle that makes up the body of the clock face.
+    The svg element's viewbox is 100px in size. Therefore the clock face circle
+    will fill the viewbox completely when set to 50.
+
+    ```
+    {{clock-face faceRadius="25"}}
+    ```
+
     @property faceRadius
-    @type {Number}
+    @type {Number|String}
     @default `48`
   */
   faceRadius: 48,
@@ -96,9 +165,9 @@ export default Ember.Component.extend({
   height: Ember.computed.alias('size'),
 
   /**
-
     @property clockNumbers
     @type {Array}
+    @private
   */
   clockNumbers: Ember.A([
     { text: 1,  x: 67,   y: 18   },
@@ -116,9 +185,9 @@ export default Ember.Component.extend({
   ]),
 
   /**
-
     @property clockMinutes
     @type {Array}
+    @private
   */
   clockMinutes: Ember.computed( function() {
     var minutes = [];
