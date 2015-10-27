@@ -1,3 +1,7 @@
+svg.clock-face {
+    overflow: visible;
+}
+
 svg.clock-face > circle.face {
 	stroke-width: 2px;
   stroke: #405FD0;
