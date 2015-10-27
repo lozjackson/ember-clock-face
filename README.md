@@ -28,7 +28,7 @@ Clock face, 150px in size, with numbers.
 
 The clock can be styled using CSS.
 
-The clock face's svg element has the class name `clock-face`.
+The clock face's svg element has the class name `clock-face`.  The circle that makes up the background of the clock face has a class name of `face`.
 
 The clock hands have `hour-hand`, `minute-hand` and `second-hand` class names.  
 The markers have `hour-mark` and `minute-mark` class names.
