@@ -96,46 +96,35 @@ export default Ember.Component.extend({
   height: Ember.computed.alias('size'),
 
   /**
-    Computed Property.
 
-    @property hour
-    @type {Number}
+    @property clockNumbers
+    @type {Array}
   */
-  hour: Ember.computed( 'clock.hour', 'clock.minute', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
-    }
-    var hour = clock.get('hour');
-    var minute = clock.get('minute');
-    return 30 * ( hour % 12 ) + minute / 2;
-  }),
+  clockNumbers: Ember.A([
+    { text: 1,  x: 67,   y: 18   },
+    { text: 2,  x: 82.5, y: 33   },
+    { text: 3,  x: 89,   y: 54   },
+    { text: 4,  x: 82.5, y: 73.5 },
+    { text: 5,  x: 67,   y: 89   },
+    { text: 6,  x: 47,   y: 95   },
+    { text: 7,  x: 27,   y: 90   },
+    { text: 8,  x: 11.5, y: 73.5 },
+    { text: 9,  x: 5.5,  y: 54   },
+    { text: 10, x: 10,   y: 33   },
+    { text: 11, x: 24.5, y: 18   },
+    { text: 12, x: 44,   y: 12   }
+  ]),
 
   /**
-    Computed Property.
 
-    @property minute
-    @type {Number}
+    @property clockMinutes
+    @type {Array}
   */
-  minute: Ember.computed( 'clock.minute', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
+  clockMinutes: Ember.computed( function() {
+    var minutes = [];
+    for (var i = 1; i < 61; i++) {
+      minutes.push({ value: i });
     }
-    return 6 * clock.get('minute');
-  }),
-
-  /**
-    Computed Property.
-
-    @property second
-    @type {Number}
-  */
-  second: Ember.computed( 'clock.second', function() {
-    var clock = this.clock;
-    if ( !clock ) {
-      return 0;
-    }
-    return 6 * clock.get('second');
+    return minutes;
   })
 });
