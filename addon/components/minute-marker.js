@@ -13,6 +13,7 @@ export default Ember.Component.extend({
     @property tagName
     @type {String}
     @default `line`
+    @private
   */
   tagName: 'line',
 
@@ -20,6 +21,7 @@ export default Ember.Component.extend({
     @property attributeBindings
     @type {Array}
     @default `[ 'x1', 'x2', 'y1', 'y2', 'transform' ]`
+    @private
   */
   attributeBindings: [ 'x1', 'x2', 'y1', 'y2', 'transform' ],
 
@@ -27,6 +29,7 @@ export default Ember.Component.extend({
     @property classNames
     @type {Array}
     @default `[ 'minute-mark' ]`
+    @private
   */
   classNames: [ 'minute-mark' ],
 
@@ -42,6 +45,7 @@ export default Ember.Component.extend({
     @property x1
     @type {Number}
     @default 50
+    @private
   */
   x1:50,
 
@@ -49,6 +53,7 @@ export default Ember.Component.extend({
     @property y1
     @type {Number}
     @default 8
+    @private
   */
   y1:8,
 
@@ -56,6 +61,7 @@ export default Ember.Component.extend({
     @property x2
     @type {Number}
     @default 50
+    @private
   */
   x2:50,
 
@@ -63,13 +69,17 @@ export default Ember.Component.extend({
     @property y2
     @type {Number}
     @default 5
+    @private
   */
   y2:5,
 
   /**
+    Computed Property.
+
     @property transform
     @type {String}
     @default `rotate(0 50 50)`
+    @private
   */
   transform: Ember.computed('value', function() {
     var value = this.get('value') || 0;

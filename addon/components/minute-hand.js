@@ -15,11 +15,15 @@ export default ClockHandComponent.extend({
     @property classNames
     @type {Array}
     @default `[ 'clock-hand', 'minute-hand' ]`
+    @private
   */
   classNames: [ 'clock-hand', 'minute-hand' ],
 
   /**
-    Computed Property.
+    Computed Property.  The value is set using the clock service to synchronize time.
+
+    This is the angle to rotate the clock hand by to point to the correct time.
+    It is used by the `transform` computed property to set the rotate angle.
 
     @property value
     @type {Number}
