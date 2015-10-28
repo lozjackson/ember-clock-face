@@ -47,7 +47,7 @@ The clock numbers have the class name `clock-number`.
 
 ## Installation
 
-npm install ember-clock-face --save-dev
+`npm install ember-clock-face --save-dev`
 
 
 
