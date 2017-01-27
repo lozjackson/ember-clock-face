@@ -1,7 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import ClockService from 'ember-clock/services/clock';
-import Ember from 'ember';
 
 moduleForComponent('second-hand', 'Integration | Component | second hand', {
   integration: true,
@@ -39,37 +38,7 @@ test('hand rotates', function(assert) {
   var second = date.getSeconds();
   var rotateSecond = 6 * second;
 
-  this.clock.stopClock();
+  this.clock.stop();
 
   assert.equal(this.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
-});
-
-test('second hand ticks', function (assert) {
-  assert.expect(2);
-  var that = this;
-  this.render(hbs`{{second-hand clock=clock}}`);
-
-
-  var date = new Date();
-  var second = date.getSeconds();
-  var rotateSecond = 6 * second;
-
-  //this.clock.stopClock();
-
-  assert.equal(that.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
-
-  //this.clock.startClock();
-
-  window.QUnit.stop();
-
-  Ember.run.later(function() {
-    var date = new Date();
-    var second = date.getSeconds();
-    var rotateSecond = 6 * second;
-
-    //this.clock.stopClock();
-    assert.equal(that.$('.clock-hand.second-hand').attr('transform'), `rotate(${rotateSecond} 50 50)`, 'second-hand should be rotated by ' + rotateSecond );
-
-    window.QUnit.start();
-  }, 2050);
 });

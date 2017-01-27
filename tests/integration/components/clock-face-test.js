@@ -42,7 +42,7 @@ test('clock service exists and has correct time', function(assert) {
   var minute = date.getMinutes();
   var hour = date.getHours();
 
-  this.clock.stopClock();
+  this.clock.stop();
 
   assert.equal(this.clock.get('second'), second, 'clock.second should be ' + second);
   assert.equal(this.clock.get('minute'), minute, 'clock.minute should be ' + minute);
