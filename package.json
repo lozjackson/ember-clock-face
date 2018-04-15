@@ -1,6 +1,6 @@
 {
   "name": "ember-clock-face",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A clock face for Ember.",
   "keywords": [
     "ember-addon",
