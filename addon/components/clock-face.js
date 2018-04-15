@@ -1,8 +1,11 @@
 /**
   @module ember-clock-face
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/clock-face';
+import { A } from '@ember/array';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 
 /**
   # Clock Face
@@ -26,7 +29,7 @@ import layout from '../templates/components/clock-face';
   @class ClockFaceComponent
   @namespace EmberClockFace
 */
-export default Ember.Component.extend({
+export default Component.extend({
 
   /**
     @property layout
@@ -155,7 +158,7 @@ export default Ember.Component.extend({
     @property width
     @type {Number}
   */
-  width: Ember.computed.alias('size'),
+  width: alias('size'),
 
   /**
     Alias of `size`.
@@ -163,14 +166,14 @@ export default Ember.Component.extend({
     @property height
     @type {Number}
   */
-  height: Ember.computed.alias('size'),
+  height: alias('size'),
 
   /**
     @property clockNumbers
     @type {Array}
     @private
   */
-  clockNumbers: Ember.A([
+  clockNumbers: A([
     { text: 1,  x: 67,   y: 18   },
     { text: 2,  x: 82.5, y: 33   },
     { text: 3,  x: 89,   y: 54   },
@@ -190,7 +193,7 @@ export default Ember.Component.extend({
     @type {Array}
     @private
   */
-  clockMinutes: Ember.computed( function() {
+  clockMinutes: computed( function() {
     var minutes = [];
     for (var i = 1; i < 61; i++) {
       minutes.push({ value: i });

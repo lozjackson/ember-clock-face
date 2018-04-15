@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 // import SvgLineMixin from '../../../mixins/svg-line';
 import SvgLineMixin from 'ember-clock-face/mixins/svg-line';
 import { module, test } from 'qunit';
@@ -7,13 +7,13 @@ module('Unit | Mixin | svg line');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
   assert.ok(subject);
 });
 
 test('tagName is line', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
 
 
@@ -21,7 +21,7 @@ test('tagName is line', function(assert) {
 });
 
 test('test x1', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
 
 
@@ -33,7 +33,7 @@ test('test x1', function(assert) {
 });
 
 test('test x2', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
 
 
@@ -45,7 +45,7 @@ test('test x2', function(assert) {
 });
 
 test('test y1', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
 
 
@@ -57,7 +57,7 @@ test('test y1', function(assert) {
 });
 
 test('test y2', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
 
 
@@ -69,7 +69,7 @@ test('test y2', function(assert) {
 });
 
 test('test transform', function(assert) {
-  var SvgLineObject = Ember.Object.extend(SvgLineMixin);
+  var SvgLineObject = EmberObject.extend(SvgLineMixin);
   var subject = SvgLineObject.create();
 
 

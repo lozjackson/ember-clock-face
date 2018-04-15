@@ -1,8 +1,9 @@
 /**
   @module ember-clock-face
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import SvgLineMixin from 'ember-clock-face/mixins/svg-line';
+import { computed } from '@ember/object';
 
 /**
   ## Clock Hand
@@ -14,7 +15,7 @@ import SvgLineMixin from 'ember-clock-face/mixins/svg-line';
   @uses EmberClockFace.SvgLineMixin
   @namespace EmberClockFace
 */
-export default Ember.Component.extend( SvgLineMixin, {
+export default Component.extend( SvgLineMixin, {
 
   /**
     @property classNames
@@ -43,7 +44,7 @@ export default Ember.Component.extend( SvgLineMixin, {
     @type {Number}
     @private
   */
-  rotate: Ember.computed( 'value', function() {
+  rotate: computed( 'value', function() {
     var value = this.get('value') || 0;
     return 6 * value;
   }),
