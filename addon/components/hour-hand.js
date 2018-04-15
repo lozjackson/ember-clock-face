@@ -46,7 +46,7 @@ export default ClockHandComponent.extend({
     @property value
     @type {Number}
   */
-  value: computed( 'clock.hour', 'clock.minute', function() {
+  value: computed( 'clock.{hour,minute}', function() {
     var clock = this.clock;
     if ( !clock ) {
       return 0;
