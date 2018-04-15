@@ -1,13 +1,14 @@
 /**
   @module ember-clock-face
 */
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
 
 /**
   @class SvgLineMixin
   @namespace EmberClockFace
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
   /**
     @property tagName
@@ -71,7 +72,7 @@ export default Ember.Mixin.create({
     @default `rotate(0 50 50)`
     @private
   */
-  transform: Ember.computed('rotate', function() {
+  transform: computed('rotate', function() {
     var rotate = this.get('rotate') || 0;
     return `rotate(${rotate} 50 50)`;
   })

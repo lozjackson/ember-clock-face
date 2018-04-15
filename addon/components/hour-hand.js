@@ -1,8 +1,9 @@
 /**
   @module ember-clock-face
 */
-import Ember from 'ember';
 import ClockHandComponent from 'ember-clock-face/components/clock-hand';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 
 /**
   @class HourHandComponent
@@ -34,7 +35,7 @@ export default ClockHandComponent.extend({
     @type {Number}
     @private
   */
-  rotate: Ember.computed.alias( 'value' ),
+  rotate: alias( 'value' ),
 
   /**
     Computed Property.  The value is set using the clock service to synchronize time.
@@ -45,7 +46,7 @@ export default ClockHandComponent.extend({
     @property value
     @type {Number}
   */
-  value: Ember.computed( 'clock.hour', 'clock.minute', function() {
+  value: computed( 'clock.hour', 'clock.minute', function() {
     var clock = this.clock;
     if ( !clock ) {
       return 0;

@@ -1,8 +1,8 @@
 /**
   @module ember-clock-face
 */
-import Ember from 'ember';
 import ClockHandComponent from 'ember-clock-face/components/clock-hand';
+import { alias } from '@ember/object/computed';
 
 /**
   @class MinuteHandComponent
@@ -28,5 +28,5 @@ export default ClockHandComponent.extend({
     @property value
     @type {Number}
   */
-  value: Ember.computed.alias( 'clock.minute' )
+  value: alias( 'clock.minute' )
 });
